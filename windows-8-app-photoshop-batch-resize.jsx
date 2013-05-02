@@ -89,13 +89,13 @@ if ( targetFolder !== null ) {
                     // resize by height
                     targetFile.resizeImage ( null, images[i][2], 72, ResampleMethod.BICUBIC );
                     // crop left/right
-                    targetFile.crop ([Math.floor(targetFile.width-images[i][1])/2, 0, (Math.floor(targetFile.width-images[i][1])/2)+images[i][1], images[i][2]]);
+                    targetFile.crop ([Math.floor((targetFile.width-images[i][1])/2), 0, Math.floor((targetFile.width-images[i][1])/2)+images[i][1], images[i][2]]);
                 }
                 else {
                     // resize by width
                     targetFile.resizeImage ( images[i][1], null, 72, ResampleMethod.BICUBIC );
                     // crop top/bottom
-                    targetFile.crop ([0, Math.floor(targetFile.height-images[i][2])/2, images[i][1], (Math.floor(targetFile.height-images[i][2])/2)+images[i][2]]);
+                    targetFile.crop ([0, Math.floor((targetFile.height-images[i][2])/2), images[i][1], Math.floor((targetFile.height-images[i][2])/2)+images[i][2]]);
                 }
                 
                 // use unsharp mask
